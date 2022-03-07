@@ -12,18 +12,19 @@
           .dropdown-content.mini
             = link_to '編集する', edit_article_path(@article)
             = link_to '削除する', article_path(@article), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
-    .article_content
-      = @article.content
+  .article_content
+    = @article.content
+  - if user_signed_in?
     .article_heart
-      = image_tag "heart.svg"
+      = link_to article_like_path(@article), data: { method: 'post' } do
+        = image_tag 'heart.svg'
 
-  .article
+.article
   %h2 コメント一覧
   - @comments.each do |comment|
     .article_comment
       %p= comment.content
-  
-  .container
+.container
   = link_to new_article_comment_path(@article) do
     .btn-secondary
       コメントを追加
