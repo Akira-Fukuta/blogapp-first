@@ -1,6 +1,10 @@
 {
   "name": "blog_app",
   "private": true,
+  "engines": {
+    "node": "14.x",
+    "npm": "6.x.x"
+  },
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
@@ -12,8 +16,5 @@
   "version": "0.1.0",
   "devDependencies": {
     "webpack-dev-server": "^4.7.4"
-  },
-  "engines": {
-    "node": "14.x"
   }
 }
